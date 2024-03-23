@@ -17,3 +17,7 @@
 
 - Ruby 3.2.2
 - Rails 7.1.3.2
+
+
+## サンプル
+<img width="1058" alt="スクリーンショット 2024-03-24 8 06 15" src="https://github.com/Kazuya-Sakashita/rails7-chartkick-graph-sample/assets/64903209/2bf32e92-f1f4-4ea2-a55e-80382544ad59">
