@@ -1,0 +1,833 @@
+Started GET "/" for ::1 at 2024-03-24 12:07:42 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 610)
+  Rendered layout layouts/application.html.erb (Duration: 154.6ms | Allocations: 131162)
+Completed 200 OK in 166ms (Views: 157.9ms | ActiveRecord: 0.0ms | Allocations: 138867)
+
+
+Started GET "/" for ::1 at 2024-03-24 12:11:51 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 249)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 7779)
+Completed 200 OK in 22ms (Views: 21.9ms | ActiveRecord: 0.0ms | Allocations: 8042)
+
+
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-03-24 04:15:31.321868', '2024-03-24 04:15:31.321869') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240324041520)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240324041520') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+Started GET "/" for ::1 at 2024-03-24 13:16:14 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 609)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 41220)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 46424)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:16:16 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:16:45 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+Started GET "/" for ::1 at 2024-03-24 13:17:41 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 608)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 42278)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 46654)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:17:43 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/rails/info" for ::1 at 2024-03-24 13:17:59 +0900
+Processing by Rails::InfoController#index as HTML
+Redirected to http://localhost:3000/rails/info/routes
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 963)
+
+
+Started GET "/rails/info/routes" for ::1 at 2024-03-24 13:17:59 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/layouts/application.html.erb
+  Rendering /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (Duration: 2.6ms | Allocations: 6340)
+  Rendered /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.5ms | Allocations: 689)
+  Rendered /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 5.1ms | Allocations: 11193)
+  Rendered layout /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/layouts/application.html.erb (Duration: 5.3ms | Allocations: 11469)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 12243)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:18:00 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:18:30 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+Started GET "/" for ::1 at 2024-03-24 13:18:55 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 608)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 42345)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.0ms | Allocations: 46721)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:18:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/" for ::1 at 2024-03-24 13:19:24 +0900
+Processing by HomeController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 249)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1493)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 1768)
+
+
+Started GET "/" for ::1 at 2024-03-24 13:19:29 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 249)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1500)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1764)
+
+
+Started GET "/" for ::1 at 2024-03-24 13:19:30 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 249)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1498)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 1764)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:19:32 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:23:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/" for ::1 at 2024-03-24 13:26:01 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 422)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 18933)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 19870)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:26:21 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 579)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 3943)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 5010)
+Completed 200 OK in 30ms (Views: 12.4ms | ActiveRecord: 2.1ms | Allocations: 19916)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:29:26 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:29:35 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 596)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 867)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 21468)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 1.0ms | Allocations: 26917)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:30:35 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 556)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1859)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 20170)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.9ms | Allocations: 25560)
+
+
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:33:29 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 586)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 3507)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 48893)
+Completed 200 OK in 46ms (Views: 34.9ms | ActiveRecord: 1.0ms | Allocations: 68133)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-03-24 13:33:46 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 222)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 83)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1602)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2604)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3511)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-03-24 13:33:47 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1895)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 2459)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:34:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:34:58 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 556)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1866)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 21320)
+Completed 200 OK in 30ms (Views: 21.4ms | ActiveRecord: 3.1ms | Allocations: 26736)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-03-24 13:35:16 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 212)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1544)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2546)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3443)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:36:23 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 556)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1883)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 21327)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.9ms | Allocations: 26737)
+
+
+Started GET "/users/password/new" for ::1 at 2024-03-24 13:36:32 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 212)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 124)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1141)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2143)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3018)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-03-24 13:36:32 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1275)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2277)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3165)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-03-24 13:37:39 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 507)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2189)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 21653)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 1.0ms | Allocations: 26986)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:37:48 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1299)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2297)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3285)
+
+
+Started GET "/users/password/new" for ::1 at 2024-03-24 13:37:49 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 119)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 870)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1872)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 2741)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-03-24 13:37:50 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 926)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 1925)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 2495)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:40:19 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 556)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1866)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 21324)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 1.1ms | Allocations: 26728)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:40:26 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started POST "/users" for ::1 at 2024-03-24 13:40:40 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test1@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2024-03-24 04:40:40.494878"], ["updated_at", "2024-03-24 04:40:40.494878"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 261ms (ActiveRecord: 0.9ms | Allocations: 13834)
+
+
+Started GET "/" for ::1 at 2024-03-24 13:40:40 +0900
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 468)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1780)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 2552)
+
+
+Started GET "/" for ::1 at 2024-03-24 13:40:40 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 249)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | Allocations: 1454)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 1715)
+
+
+Started GET "/rails/info" for ::1 at 2024-03-24 13:40:51 +0900
+Processing by Rails::InfoController#index as HTML
+Redirected to http://localhost:3000/rails/info/routes
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 846)
+
+
+Started GET "/rails/info/routes" for ::1 at 2024-03-24 13:40:51 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/layouts/application.html.erb
+  Rendering /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [42 times] (Duration: 3.1ms | Allocations: 6095)
+  Rendered /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.5ms | Allocations: 688)
+  Rendered /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 6.2ms | Allocations: 10887)
+  Rendered layout /Users/kazuya/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/layouts/application.html.erb (Duration: 6.5ms | Allocations: 11163)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 11937)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:40:52 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/users/1/edit" for ::1 at 2024-03-24 13:41:32 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/edit"):
+  
+Started GET "/users/1" for ::1 at 2024-03-24 13:41:53 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users/1"):
+  
+Started GET "/" for ::1 at 2024-03-24 13:43:40 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 424)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/shared/_header.html.erb:6
+  Rendered layouts/shared/_header.html.erb (Duration: 3.1ms | Allocations: 6451)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 26728)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.1ms | Allocations: 27660)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `restaurants_path' for #<ActionView::Base:0x000000000223f8>):
+     5:     <ul class="flex items-center space-x-4">
+     6:       <% if user_signed_in? %>
+     7:         <li><%= link_to 'ホーム', root_path, class: "hover:text-yellow-600 text-gray-800" %></li>
+     8:         <li><%= link_to 'レストラン一覧', restaurants_path, class: "hover:text-yellow-600 text-gray-800" %></li>
+     9:         <li><%= link_to 'アカウント編集', edit_user_registration_path, class: "hover:text-yellow-600 text-gray-800" %></li>
+    10:         <li><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしてよろしいですか？" }, class: "hover:text-yellow-600 text-gray-800" %></li>
+    11:       <% else %>
+  
+app/views/layouts/shared/_header.html.erb:8
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2024-03-24 13:45:00 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 424)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/shared/_header.html.erb:6
+  Rendered layouts/shared/_header.html.erb (Duration: 3.6ms | Allocations: 6284)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 26477)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.0ms | Allocations: 27392)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `expenses_path' for #<ActionView::Base:0x000000000266b0>):
+     5:     <ul class="flex items-center space-x-4">
+     6:       <% if user_signed_in? %>
+     7:         <li><%= link_to 'ホーム', root_path, class: "hover:text-pink-500 text-gray-800" %></li>
+     8:         <li><%= link_to '支出管理', expenses_path, class: "hover:text-pink-500 text-gray-800" %></li>
+     9:         <li><%= link_to '収入管理', incomes_path, class: "hover:text-pink-500 text-gray-800" %></li>
+    10:         <li><%= link_to 'カテゴリ管理', categories_path, class: "hover:text-pink-500 text-gray-800" %></li>
+    11:         <li><%= link_to 'アカウント編集', edit_user_registration_path, class: "hover:text-pink-500 text-gray-800" %></li>
+  
+app/views/layouts/shared/_header.html.erb:8
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2024-03-24 13:45:55 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 424)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/shared/_header.html.erb:6
+  Rendered layouts/shared/_header.html.erb (Duration: 3.3ms | Allocations: 5320)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.2ms | Allocations: 303)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 24783)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 1.1ms | Allocations: 25721)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:45:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/" for ::1 at 2024-03-24 13:47:25 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 424)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/shared/_header.html.erb:5
+  Rendered layouts/shared/_header.html.erb (Duration: 2.9ms | Allocations: 5320)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.2ms | Allocations: 289)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 25919)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 1.0ms | Allocations: 26857)
+
+
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2024-03-24 13:47:35 +0900
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 18ms (ActiveRecord: 0.1ms | Allocations: 2736)
+
+
+Started GET "/" for ::1 at 2024-03-24 13:47:35 +0900
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 249)
+  Rendered layouts/shared/_header.html.erb (Duration: 0.2ms | Allocations: 189)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1838)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 2148)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:47:37 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 556)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1850)
+  Rendered layouts/shared/_header.html.erb (Duration: 0.2ms | Allocations: 130)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3187)
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 4301)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-03-24 13:47:54 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 238ms (ActiveRecord: 0.3ms | Allocations: 3039)
+
+
+Started GET "/" for ::1 at 2024-03-24 13:47:54 +0900
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 249)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/shared/_header.html.erb:5
+  Rendered layouts/shared/_header.html.erb (Duration: 0.6ms | Allocations: 771)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 2385)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 2652)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:51:26 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+Started GET "/" for ::1 at 2024-03-24 13:52:32 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 608)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/shared/_header.html.erb:5
+  Rendered layouts/shared/_header.html.erb (Duration: 9.8ms | Allocations: 17354)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.2ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 65750)
+Completed 200 OK in 44ms (Views: 39.8ms | ActiveRecord: 1.0ms | Allocations: 70122)
+
+
+Started GET "/" for ::1 at 2024-03-24 13:55:00 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 249)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/shared/_header.html.erb:5
+  Rendered layouts/shared/_header.html.erb (Duration: 3.0ms | Allocations: 783)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 3443)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.2ms | Allocations: 3709)
+
+
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2024-03-24 13:55:11 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20240324041520_devise_create_users.rb
+
+
+):
+  
+activerecord (7.1.3.2) lib/active_record/migration.rb:755:in `check_pending_migrations'
+activerecord (7.1.3.2) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.3.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.3.2) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.3.2) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2024-03-24 13:55:16 +0900
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-03-24 04:55:16.977013', '2024-03-24 04:55:16.977017') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240324041520)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240324041520') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_out" for ::1 at 2024-03-24 13:55:17 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for ::1 at 2024-03-24 13:55:17 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 500)
+  Rendered layouts/shared/_header.html.erb (Duration: 1.0ms | Allocations: 701)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.2ms | Allocations: 316)
+  Rendered layout layouts/application.html.erb (Duration: 152.2ms | Allocations: 131839)
+Completed 200 OK in 155ms (Views: 152.9ms | ActiveRecord: 0.0ms | Allocations: 134333)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:55:19 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 577)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3974)
+  Rendered layouts/shared/_header.html.erb (Duration: 0.1ms | Allocations: 130)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5311)
+Completed 200 OK in 29ms (Views: 8.0ms | ActiveRecord: 1.8ms | Allocations: 22352)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-03-24 13:55:27 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 20ms (ActiveRecord: 0.1ms | Allocations: 6402)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 115)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 901)
+  Rendered layouts/shared/_header.html.erb (Duration: 0.1ms | Allocations: 82)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 2120)
+Completed 200 OK in 225ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 3870)
+
+
+Started GET "/users/password/new" for ::1 at 2024-03-24 13:55:33 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 125)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1157)
+  Rendered layouts/shared/_header.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2413)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 3283)
+
+
+Started GET "/users/password/new" for ::1 at 2024-03-24 13:55:33 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 112)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 604)
+  Rendered layouts/shared/_header.html.erb (Duration: 0.4ms | Allocations: 109)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1853)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 2404)
+
+
+Started GET "/users/password/new" for ::1 at 2024-03-24 13:55:36 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 604)
+  Rendered layouts/shared/_header.html.erb (Duration: 0.4ms | Allocations: 109)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 1853)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 2403)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-03-24 13:55:36 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1382)
+  Rendered layouts/shared/_header.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 2638)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 3553)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-03-24 13:55:38 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 903)
+  Rendered layouts/shared/_header.html.erb (Duration: 0.3ms | Allocations: 109)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2148)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 2758)
+
+
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-03-24 04:55:53.263635', '2024-03-24 04:55:53.263636') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240324041520)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240324041520') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /Users/kazuya/Desktop/work/develop/KakeiboNavi/config/environment.rb:5)
+Started POST "/users" for ::1 at 2024-03-24 13:56:06 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test1@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2024-03-24 04:56:06.808637"], ["updated_at", "2024-03-24 04:56:06.808637"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 235ms (ActiveRecord: 2.4ms | Allocations: 29332)
+
+
+Started GET "/" for ::1 at 2024-03-24 13:56:06 +0900
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 579)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/shared/_header.html.erb:5
+  Rendered layouts/shared/_header.html.erb (Duration: 1.1ms | Allocations: 1557)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.2ms | Allocations: 308)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 43324)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.1ms | Allocations: 44832)
+
+
+Started GET "/service_worker.js" for ::1 at 2024-03-24 13:56:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/service_worker.js"):
+  
+Started GET "/" for ::1 at 2024-03-24 13:56:57 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 249)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/shared/_header.html.erb:5
+  Rendered layouts/shared/_header.html.erb (Duration: 1.5ms | Allocations: 782)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2387)
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 2659)
+
+
+Started GET "/users/edit" for ::1 at 2024-03-24 13:57:02 +0900
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 220)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2766)
+  Rendered layouts/shared/_header.html.erb (Duration: 0.1ms | Allocations: 166)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4143)
+Completed 200 OK in 15ms (Views: 8.9ms | ActiveRecord: 0.5ms | Allocations: 6058)
+
+
+Started GET "/" for ::1 at 2024-03-24 13:57:09 +0900
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 249)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/shared/_header.html.erb:5
+  Rendered layouts/shared/_header.html.erb (Duration: 3.6ms | Allocations: 784)
+  Rendered layouts/shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 2375)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms | Allocations: 2642)
+
+
