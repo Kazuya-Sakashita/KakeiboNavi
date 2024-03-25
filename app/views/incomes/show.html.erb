@@ -16,6 +16,11 @@
     <span class="text-gray-600"><%= @income.date %></span>
   </div>
 
+<%= link_to '削除', user_income_path(@user, @income),
+            method: :delete,
+            data: { turbo_confirm: '本当に削除してよろしいですか？', turbo_method: :delete },
+            class: "text-white bg-red-500 hover:bg-red-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+
 
 <%= link_to '編集', edit_user_income_path(@user, @income), class: "text-white bg-blue-500 hover:bg-blue-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %> |
 <%= link_to '一覧に戻る', user_incomes_path(@user), class: "text-pink-600 hover:text-pink-800" %>

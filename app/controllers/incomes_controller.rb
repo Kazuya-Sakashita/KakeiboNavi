@@ -44,7 +44,7 @@ class IncomesController < ApplicationController
 
   def destroy
     @income.destroy
-    redirect_to incomes_url, notice: 'Income was successfully destroyed.'
+    redirect_to user_incomes_path, notice: 'Income was successfully destroyed.'
   end
 
   private
