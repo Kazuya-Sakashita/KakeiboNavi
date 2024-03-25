@@ -1,0 +1,28 @@
+<div class="container mx-auto px-4 py-2">
+  <h1 class="text-3xl font-semibold text-gray-700 mb-4">収入一覧</h1>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full table-auto text-left shadow-md rounded-lg overflow-hidden">
+      <thead class="bg-pink-200 text-gray-700">
+        <tr>
+          <th class="px-4 py-2">金額</th>
+          <th class="px-4 py-2">収入源</th>
+          <th class="px-4 py-2">日付</th>
+          <th class="px-4 py-2"></th>
+        </tr>
+      </thead>
+      <tbody class="bg-pink-50">
+        <% @incomes.each do |income| %>
+          <tr>
+            <td class="border px-4 py-2"><%= income.amount %></td>
+            <td class="border px-4 py-2"><%= income.source %></td>
+            <td class="border px-4 py-2"><%= income.date %></td>
+            <td class="border px-4 py-2"><%= link_to '表示', user_income_path(@user, income), class: "text-pink-600 hover:text-pink-800" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= link_to '登録', new_user_income_path(@user), class: "mt-4 inline-block px-4 py-2 bg-pink-500 text-white font-bold rounded hover:bg-pink-700" %>
+</div>
