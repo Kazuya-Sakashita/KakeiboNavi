@@ -54,3 +54,23 @@ config/credentials.yml.enc
 
 # Yarn Integrity files
 .yarn-integrity
+
+
+# Ignore sprockets cache files
+/tmp/cache/assets/sprockets/
+
+
+# 無視するファイル/ディレクトリのパターンを追加
+tmp/cache/
+
+# SQLite データベースファイル
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+
+# ログファイル
+log/*.log
+log/*.pid
+
+# Ignore server PID files
+/tmp/pids/*
