@@ -4,7 +4,14 @@ class IncomesController < ApplicationController
   before_action :set_income, only: [:show, :edit, :update, :destroy]
 
   def index
-    @incomes = Income.order(:date)
+    @incomes = current_user.incomes.order(:date)
+    @bar_data = @incomes.group_by(&:date).transform_values do |incomes|
+      incomes.sum(&:amount)
+    end
+
+    @bar_data_par_month = @incomes.group_by { |income| income.date.strftime("%Y-%m") }.transform_values do |incomes|
+      incomes.sum(&:amount)
+    end
   end
 
   def show

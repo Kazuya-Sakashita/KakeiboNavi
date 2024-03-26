@@ -24,5 +24,14 @@
     </table>
   </div>
 
+    <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+    <div class="p-5">
+      <h2 class="font-bold text-xl text-gray-800 mb-4">月収入）</h2>
+      <%= column_chart @bar_data_par_month, height: "300px", colors: ["#ff69b4"] %>
+
+    </div>
+  </div>
+
+
   <%= link_to '登録', new_user_income_path(@user), class: "mt-4 inline-block px-4 py-2 bg-pink-500 text-white font-bold rounded hover:bg-pink-700" %>
 </div>
