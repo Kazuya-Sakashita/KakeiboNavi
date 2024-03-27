@@ -1,0 +1,35 @@
+<div class="container mx-auto px-4 py-2">
+  <h1 class="text-3xl font-semibold text-gray-700 mb-4">支出一覧</h1>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full table-auto text-left shadow-md rounded-lg overflow-hidden">
+      <thead class="bg-pink-200 text-gray-700">
+        <tr>
+          <th class="px-4 py-2">金額</th>
+          <th class="px-4 py-2">説明</th>
+          <th class="px-4 py-2">日付</th>
+          <th class="px-4 py-2">操作</th>
+        </tr>
+      </thead>
+      <tbody class="bg-pink-50">
+        <% @expenses.each do |expense| %>
+          <tr>
+            <td class="border px-4 py-2"><%= expense.amount %></td>
+            <td class="border px-4 py-2"><%= expense.description %></td>
+            <td class="border px-4 py-2"><%= expense.date %></td>
+<td class="border px-4 py-2">
+  <%= link_to '表示', user_expense_path(@user, expense), class: "inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-1 px-2 rounded mr-2" %>
+  <%= link_to '編集', edit_user_expense_path(@user, expense), class: "inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-1 px-2 rounded mr-2" %>
+  <%= link_to '削除', user_expense_path(@user, expense), method: :delete, data: { turbo_confirm: '本当に削除してよろしいですか？', turbo_method: :delete }, class: "inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded" %>
+
+</td>
+
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= link_to '新しい支出を追加', new_user_expense_path, class: "mt-4 inline-block px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-700" %>
+</div>
