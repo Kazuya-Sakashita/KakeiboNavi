@@ -1,23 +1,24 @@
-<% if flash[:alert] %>
-  <div class="alert alert-danger" role="alert">
-    <%= flash[:alert] %>
+<%= form_with(model: [@user, @income], local: true, class: "bg-pink-50 p-4 rounded-lg shadow") do |form| %>
+  <div class="mb-4">
+    <%= form.label :amount, "金額", class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.number_field :amount, class: "form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
   </div>
-<% end %>
 
-<%= form_with(model: [@user, @income], local: true) do |f| %>
-  <div class="field mb-4">
-    <%= f.label :amount, "金額", class: "block text-gray-700 text-sm font-bold mb-2" %>
-    <%= f.number_field :amount, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  <div class="mb-4">
+    <%= form.label :description, "収入源", class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_field :description, class: "form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
   </div>
-  <div class="field mb-4">
-    <%= f.label :source, "収入源", class: "block text-gray-700 text-sm font-bold mb-2" %>
-    <%= f.text_field :source, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+
+  <div class="mb-4">
+    <%= form.label :date, "日付", class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.date_field :date, class: "form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
   </div>
-  <div class="field mb-4">
-    <%= f.label :date, "日付", class: "block text-gray-700 text-sm font-bold mb-2" %>
-    <%= f.date_field :date, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "保存", class: "bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+
+  <div>
+    <% if @income.persisted? %>
+      <%= form.submit "収入を更新", class: "w-full bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    <% else %>
+      <%= form.submit "収入を登録", class: "w-full bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    <% end %>
   </div>
 <% end %>
