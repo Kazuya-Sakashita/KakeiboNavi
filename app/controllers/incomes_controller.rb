@@ -41,12 +41,14 @@ class IncomesController < ApplicationController
   def update
     @income = Income.find(params[:id])
 
-    if @income.update(income_params)
-      flash[:success] = '収入情報を更新しました。'
-      redirect_to user_income_path(@user, @income)
-    else
-      flash[:error] = @income.errors.full_messages.join(', ')
-      render :edit
+    respond_to do |format|
+      if @income.update(income_params)
+        format.html { redirect_to user_incomes_path(@user), notice: '収入情報を更新しました。' }
+        format.turbo_stream { redirect_to user_incomes_path(@user), notice: '収入情報を更新しました。' }
+      else
+        format.html { flash.now[:alert] = @income.errors.full_messages.to_sentence; render :new, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("form_errors", partial: "incomes/form_errors", locals: { income: @income }) }
+      end
     end
   end
 

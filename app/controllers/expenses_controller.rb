@@ -38,14 +38,15 @@ class ExpensesController < ApplicationController
   def update
     @expense = Expense.find(params[:id])
 
-    if  @expense.update(expense_params)
-      flash[:success] = '支出情報を更新しました。'
-      redirect_to user_expenses_path(@user)
-    else @expense
-      flash.now[:error] = @expense.errors.full_messages.join(', ')
-      render :edit
+    respond_to do |format|
+      if @expense.update(expense_params)
+        format.html { redirect_to user_expenses_path(@user), notice: '支出情報を更新しました。' }
+        format.turbo_stream { redirect_to user_expenses_path(@user), notice: '支出情報を更新しました。' }
+      else
+        format.html { flash.now[:alert] = @expense.errors.full_messages.to_sentence; render :new, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("form_errors", partial: "expenses/form_errors", locals: { expense: @expense }) }
+      end
     end
-
   end
 
   def destroy

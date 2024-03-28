@@ -1,4 +1,5 @@
 <div class="container mx-auto px-4 py-2">
-  <h1 class="text-2xl font-bold text-gray-800 mb-6">記録の編集</h1>
+  <h1 class="text-2xl font-bold text-gray-800 mb-6">支出記録の編集</h1>
+  <%= render 'form_errors', expense: @expense %>
   <%= render 'form', expense: @expense %>
 </div>
