@@ -73,3 +73,4 @@ gem "chartkick"
 gem "cssbundling-rails", "~> 1.4"
 gem "devise"
 gem 'serviceworker-rails'
+gem 'rails-i18n'

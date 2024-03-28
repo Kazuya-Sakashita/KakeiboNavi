@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+      income:
+        amount: "金額"
+        date: "日付"
+        source: "収入源"
+      expense:
+        amount: "金額"
+        description: "使用目的(項目)"
+        date: "日付"
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "を入力してください"
+            email:
+              blank: "を入力してください"
+        income:
+          attributes:
+            amount:
+              blank: "を入力してください"
+              not_a_number: "は数値で入力してください"
+            description:
+              blank: "を入力してください"
+            date:
+              blank: "を入力してください"
+  errors:
+    format: "%{attribute}%{message}"
