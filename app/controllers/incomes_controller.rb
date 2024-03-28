@@ -27,15 +27,16 @@ class IncomesController < ApplicationController
   def create
     @income = @user.incomes.new(income_params)
 
-    if @income.save
-      flash[:notice] = '収入を記録しました。'
-      redirect_to user_incomes_path(@user)
-    else
-      flash.now[:alert] = @income.errors.full_messages.to_sentence
-      render :new
+    respond_to do |format|
+      if @income.save
+        format.html { redirect_to user_incomes_path(@user), notice: '収入を記録しました。' }
+        format.turbo_stream { redirect_to user_incomes_path(@user), notice: '収入を記録しました。' }
+      else
+        format.html { flash.now[:alert] = @income.errors.full_messages.to_sentence; render :new, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("form_errors", partial: "incomes/form_errors", locals: { income: @income }) }
+      end
     end
   end
-
 
   def update
     @income = Income.find(params[:id])
@@ -44,7 +45,7 @@ class IncomesController < ApplicationController
       flash[:success] = '収入情報を更新しました。'
       redirect_to user_income_path(@user, @income)
     else
-      flash.now[:error] = @income.errors.full_messages.join(', ')
+      flash[:error] = @income.errors.full_messages.join(', ')
       render :edit
     end
   end

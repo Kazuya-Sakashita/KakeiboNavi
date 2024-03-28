@@ -16,12 +16,14 @@ class ExpensesController < ApplicationController
   def create
     @expense = @user.expenses.new(expense_params)
 
-    if @expense.save
-      flash[:notice] = '支出を記録しました。'
-      redirect_to user_expenses_path(@user)
-    else
-      flash.now[:alert] = @expense.errors.full_messages.to_sentence
-      render :new
+    respond_to do |format|
+      if @expense.save
+        format.html { redirect_to user_expenses_path(@user), notice: '支出を記録しました。' }
+        format.turbo_stream { redirect_to user_expenses_path(@user), notice: '支出を記録しました。' }
+      else
+        format.html { flash.now[:alert] = @expense.errors.full_messages.to_sentence; render :new, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("form_errors", partial: "expenses/form_errors", locals: { expense: @expense }) }
+      end
     end
   end
 
