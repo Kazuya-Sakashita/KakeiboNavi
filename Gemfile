@@ -48,6 +48,19 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
   gem 'pry-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'pry-byebug'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.2'
+  gem 'rubocop'
+  gem 'rubocop-ast'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rake'
+  gem 'rubocop-rspec'
+  gem 'capybara'
+  gem 'database_rewinder'
 end
 
 group :development do

@@ -69,3 +69,7 @@ Desktop.ini
 .idea/
 .vscode/
 *.sublime*
+
+
+*.sqlite3
+storage/test.sqlite3
