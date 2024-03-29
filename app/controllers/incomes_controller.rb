@@ -103,6 +103,5 @@ class IncomesController < ApplicationController
       format.html { render_failure_html }
       format.turbo_stream { render_failure_turbo_stream }
     end
-    ends
   end
 end
