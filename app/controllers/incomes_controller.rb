@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# 収入に関連する操作を扱うコントローラ
 class IncomesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
@@ -28,7 +25,7 @@ class IncomesController < ApplicationController
   def create
     @income = @user.incomes.new(income_params)
     if @income.save
-      handle_success
+      handle_success('収入情報を追加しました。')
     else
       handle_failure
     end
@@ -36,9 +33,8 @@ class IncomesController < ApplicationController
 
   def update
     @income = Income.find(params[:id])
-
     if @income.update(income_params)
-      handle_update_success
+      handle_success('収入情報を更新しました。')
     else
       handle_update_failure
     end
@@ -46,13 +42,14 @@ class IncomesController < ApplicationController
 
   def destroy
     @income.destroy
-    redirect_to user_incomes_path, notice: 'Income was successfully destroyed.'
+    redirect_to user_incomes_path(@user), notice: 'Income was successfully destroyed.'
   end
 
   private
 
   def set_income
-    @income = Income.find(params[:id])
+    @income = @user.incomes.find_by(id: params[:id])
+    redirect_to root_path, alert: '不正なアクセスです。' if @income.nil?
   end
 
   def income_params
@@ -63,45 +60,17 @@ class IncomesController < ApplicationController
     @user = current_user
   end
 
-  def handle_successs
-    respond_to do |format|
-      format.html { redirect_to_success }
-      format.turbo_stream { redirect_to_success }
-    end
-  end
-
-  def handle_failure
-    respond_to do |format|
-      format.html { render_failure_html }
-      format.turbo_stream { render_failure_turbo_stream }
-    end
-  end
-
-  def redirect_to_success(notice_message)
+  def handle_success(notice_message)
     redirect_to user_incomes_path(@user), notice: notice_message
   end
 
-  def render_failure_html
+  def handle_failure
     flash.now[:alert] = @income.errors.full_messages.to_sentence
     render :new, status: :unprocessable_entity
   end
 
-  def render_failure_turbo_stream
-    render turbo_stream: turbo_stream.replace('form_errors', partial: 'incomes/form_errors',
-                                                             locals: { income: @income })
-  end
-
-  def handle_update_success
-    respond_to do |format|
-      format.html { redirect_to_success('収入情報を更新しました。') }
-      format.turbo_stream { redirect_to_success('収入情報を更新しました。') }
-    end
-  end
-
   def handle_update_failure
-    respond_to do |format|
-      format.html { render_failure_html }
-      format.turbo_stream { render_failure_turbo_stream }
-    end
+    flash.now[:alert] = @income.errors.full_messages.to_sentence
+    render :edit, status: :unprocessable_entity
   end
 end
