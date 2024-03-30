@@ -10,6 +10,6 @@ class Income < ApplicationRecord
   private
 
   def date_cannot_be_in_the_future
-    errors.add(:date, "は未来の日付であってはいけません") if date.present? && date > Date.today
+    errors.add(:date, 'は未来の日付であってはいけません') if date.present? && date > Date.today
   end
 end
