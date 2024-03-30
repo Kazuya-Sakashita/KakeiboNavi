@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe IncomesController, type: :controller do
@@ -5,7 +7,7 @@ RSpec.describe IncomesController, type: :controller do
   let(:income) { create(:income, user:) }
   let(:other_user) { create(:user) }
   let(:valid_attributes) do
-    { amount: 1000, source: 'Salary', date: Date.today }
+    { amount: 1000, source: 'Salary', date: Time.zone.today }
   end
   let(:invalid_attributes) do
     { amount: nil, source: '', date: nil }

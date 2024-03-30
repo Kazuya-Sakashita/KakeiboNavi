@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ExpensesController, type: :controller do
   let(:user) { create(:user) }
   let(:other_user) { create(:user) }
   let(:valid_attributes) do
-    { amount: 1000, description: 'Food', date: Date.today }
+    { amount: 1000, description: 'Food', date: Time.zone.today }
   end
   let(:invalid_attributes) do
     { amount: nil, description: '', date: nil }
