@@ -33,5 +33,9 @@ module Rails7ChartkickGraphSample
 
     # Active Recordのタイムゾーンも設定
     config.active_record.default_timezone = :local
+
+    config.generators do |g|
+      g.test_framework :rspec
+    end
   end
 end

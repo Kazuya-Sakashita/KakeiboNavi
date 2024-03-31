@@ -57,12 +57,12 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.2'
-  gem 'rubocop'
+  gem 'rubocop', require: false
   gem 'rubocop-ast'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rake'
-  gem 'rubocop-rspec'
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
@@ -79,7 +79,6 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
 
 gem 'chartkick'

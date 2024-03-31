@@ -1,0 +1,41 @@
+ja:
+  devise:
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+    registrations:
+      signed_up: "アカウント登録が完了しました。"
+      updated: "アカウントが更新されました。"
+      destroyed: "アカウントが削除されました。"
+    confirmations:
+      confirmed: "メールアドレスが確認されました。"
+      send_instructions: "確認メールが送信されました。"
+      send_paranoid_instructions: "メールアドレスが登録されていれば、確認メールが送信されます。"
+    unlocks:
+      send_instructions: "アンロック手順を送信しました。"
+      send_paranoid_instructions: "アカウントが存在すれば、アンロック手順がメールに送信されます。"
+      unlocked: "アカウントがアンロックされました。"
+    passwords:
+      send_instructions: "パスワード再設定手順がメールで送信されました。"
+      updated: "パスワードが変更されました。"
+      updated_not_active: "パスワードが変更されました。"
+      no_token: "パスワードリセットトークンがありません。"
+      send_paranoid_instructions: "メールアドレスが登録されていれば、パスワード再設定手順がメールで送信されます。"
+    omniauth_callbacks:
+      success: "%{kind} から承認されました。"
+      failure: "%{kind} からの承認に失敗しました。"
+    failure:
+      already_authenticated: "既にログインしています。"
+      unauthenticated: "ログインまたは登録が必要です。"
+      unconfirmed: "アカウントを確認してください。"
+      locked: "アカウントがロックされています。"
+      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+      invalid: "メールアドレスまたはパスワードが違います。"
+      invalid_token: "認証トークンが無効です。"
+      timeout: "セッションがタイムアウトしました。もう一度ログインしてください。"
+      inactive: "アカウントが有効化されていません。"
+      unapproved: "承認がされていません。"
+  errors:
+    messages:
+      one: "エラーが発生したため %{resource} は保存されませんでした。"
+      other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
