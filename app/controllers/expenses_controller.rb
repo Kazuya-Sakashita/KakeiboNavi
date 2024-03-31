@@ -20,7 +20,7 @@ class ExpensesController < ApplicationController
   def create
     @expense = @user.expenses.new(expense_params)
     if @expense.save
-      handle_success('支出を記録しました。')
+      handle_success('支出情報を追加しました。')
     else
       handle_failure(:new)
     end

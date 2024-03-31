@@ -9,6 +9,11 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'devise'
 
+# Capybaraの設定
+require 'capybara/rspec'
+require 'capybara/rails'
+require 'selenium-webdriver'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -32,6 +37,16 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config|
+  # システムテストのドライバーを設定
+  config.before(:each, type: :system) do
+    driven_by :selenium, using: :chrome, screen_size: [1400, 1400]
+  end
+
+  # JavaScriptを使うシステムテストの場合、ヘッドレスChromeを使用する
+  config.before(:each, type: :system, js: true) do
+    driven_by :selenium, using: :headless_chrome
+  end
+
   # Capybaraの設定
   config.before(:each, type: :system) do
     driven_by :selenium_chrome_headless
