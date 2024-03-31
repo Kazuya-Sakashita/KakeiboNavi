@@ -37,24 +37,11 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config|
-  # システムテストのドライバーを設定
+  # システムテストでヘッドレスChromeを使用するための設定
   config.before(:each, type: :system) do
-    driven_by :selenium, using: :chrome, screen_size: [1400, 1400]
+    driven_by :selenium, using: :headless_chrome, screen_size: [1400, 1400]
   end
 
-  # JavaScriptを使うシステムテストの場合、ヘッドレスChromeを使用する
-  config.before(:each, type: :system, js: true) do
-    driven_by :selenium, using: :headless_chrome
-  end
-
-  # Capybaraの設定
-  config.before(:each, type: :system) do
-    driven_by :selenium_chrome_headless
-  end
-
-  config.before(:each, type: :system, js: true) do
-    driven_by :selenium_chrome
-  end
   config.render_views
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
