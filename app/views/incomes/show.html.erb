@@ -1,0 +1,27 @@
+<h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">収入詳細</h1>
+
+<div class="bg-pink-100 rounded-lg p-4 shadow-lg max-w-md mx-auto">
+  <div class="mb-4">
+    <strong class="block text-gray-700">金額:</strong>
+    <span class="text-gray-600"><%= @income.amount %></span>
+  </div>
+
+  <div class="mb-4">
+    <strong class="block text-gray-700">収入源:</strong>
+    <span class="text-gray-600"><%= @income.source %></span>
+  </div>
+
+  <div class="mb-4">
+    <strong class="block text-gray-700">日付:</strong>
+    <span class="text-gray-600"><%= @income.date %></span>
+  </div>
+
+<%= link_to '削除', user_income_path(@user, @income),
+            method: :delete,
+            data: { turbo_confirm: '本当に削除してよろしいですか？', turbo_method: :delete },
+            class: "text-white bg-red-500 hover:bg-red-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+
+
+<%= link_to '編集', edit_user_income_path(@user, @income), class: "text-white bg-blue-500 hover:bg-blue-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %> |
+<%= link_to '一覧に戻る', user_incomes_path(@user), class: "text-pink-600 hover:text-pink-800" %>
+</div>

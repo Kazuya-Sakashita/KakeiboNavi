@@ -1,0 +1,24 @@
+<%= form_with(model: [@user, @income], local: true, class: "bg-pink-50 p-4 rounded-lg shadow") do |form| %>
+  <div class="mb-4">
+    <%= form.label :amount, "金額", class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.number_field :amount, class: "form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :source, "収入源", class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_field :source, class: "form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :date, "日付", class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.date_field :date, class: "form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
+  </div>
+
+  <div>
+    <% if @income.persisted? %>
+      <%= form.submit "収入を更新", class: "w-full bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    <% else %>
+      <%= form.submit "収入を登録", class: "w-full bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    <% end %>
+  </div>
+<% end %>

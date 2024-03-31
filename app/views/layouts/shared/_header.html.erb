@@ -1,0 +1,18 @@
+<header class="bg-pink-200 text-gray-700">
+  <nav class="container mx-auto flex items-center justify-between px-6 py-4">
+    <%= link_to 'KakeiboNavi', root_path, class: "text-xl font-semibold text-gray-900" %>
+    <ul class="flex items-center space-x-4">
+      <% if user_signed_in? %>
+        <li><%= link_to 'ホーム', root_path, class: "hover:text-pink-600 text-gray-900" %></li>
+        <li><%= link_to '支出管理', user_expenses_path(@user), class: "hover:text-pink-600 text-gray-900" %></li>
+        <li><%= link_to '収入管理', user_incomes_path(@user), class: "hover:text-pink-600 text-gray-900" %></li>
+        <li><%= link_to 'カテゴリ管理', '#', class: "hover:text-pink-600 text-gray-900" %></li>
+        <li><%= link_to 'アカウント編集', edit_user_registration_path, class: "hover:text-pink-600 text-gray-900" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしてよろしいですか？" }, class: "hover:text-pink-600 text-gray-900" %></li>
+      <% else %>
+        <li><%= link_to 'サインアップ', new_user_registration_path, class: "hover:text-pink-600 text-gray-900" %></li>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "hover:text-pink-600 text-gray-900" %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
