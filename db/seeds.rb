@@ -17,12 +17,25 @@
     password_confirmation: 'password'
   )
 
+  # 各ユーザーに対して12ヶ月分の収入データを生成
   12.times do |j|
     Income.create!(
       user_id: user.id,
-      amount: rand(1000..5000), # 仮に1000から5000の範囲でランダムに金額を設定
+      amount: rand(1000..5000),
       source: "収入源#{j + 1}",
-      date: Date.new(2023, j + 1, 1) # 2023年の各月を示す
+      date: Date.new(2023, j + 1, 1)
     )
+  end
+
+  # 各ユーザーに対して12ヶ月分の支出データを生成（1ヶ月に20件）
+  12.times do |month|
+    20.times do |j|
+      Expense.create!(
+        user_id: user.id,
+        amount: rand(1000..10000),
+        description: "支出#{j + 1}",
+        date: Date.new(2023, month + 1, rand(1..28))
+      )
+    end
   end
 end
