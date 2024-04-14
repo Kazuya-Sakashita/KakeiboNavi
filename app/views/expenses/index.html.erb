@@ -31,5 +31,9 @@
       </tbody>
     </table>
   </div>
-
+    <div class="bg-white rounded-lg shadow-lg border border-pink-200 overflow-hidden mt-2">
+    <div class="p-5">
+      <h2 class="font-bold text-xl text-pink-500 mb-4">月別支出</h2>
+      <%= column_chart  @expenses_par_month, height: "300px", colors: ["#ff69b4"] %>
+    </div>
 </div>

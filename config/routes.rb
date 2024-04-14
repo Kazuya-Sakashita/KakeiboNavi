@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :incomes
     resources :expenses
+    resources :reports, only: [:index, :show]
   end
 end

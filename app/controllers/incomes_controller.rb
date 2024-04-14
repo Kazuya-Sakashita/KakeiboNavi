@@ -11,7 +11,7 @@ class IncomesController < ApplicationController
       incomes.sum(&:amount)
     end
 
-    @bar_data_par_month = @incomes.group_by { |income| income.date.strftime('%Y-%m') }.transform_values do |incomes|
+    @incomes_par_month = @incomes.group_by { |income| income.date.strftime('%Y-%m') }.transform_values do |incomes|
       incomes.sum(&:amount)
     end
   end

@@ -1,0 +1,66 @@
+<div class="flex min-h-screen">
+  <div class="w-64 bg-pink-600 text-gray-500">
+    <div class="p-5">家計簿アプリ</div>
+
+
+  </div>
+
+
+
+
+  <!-- app/views/your_controller/index.html.erb -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 p-6">
+    <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+      <div class="p-5">
+        <h2 class="font-bold text-xl text-pink-500 mb-4">月別収入</h2>
+        <%= column_chart  @data_par_month.map { |month, data|
+          {
+            name: month,
+            data: { 'Income' => data[:income], 'Expense' => data[:expense] }
+          }
+        }, stacked: true, height: "500px", colors: [
+          "#ff69b4", "#ff88c2", "#ffaacd", "#ffb9d7",
+          "#ffc8e1", "#ffd7eb", "#ffe6f5", "#f2d8e6",
+          "#e6cbdb", "#dac0d0", "#cebac9", "#c2b4c2"
+        ] %>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+      <div class="p-5">
+        <h2 class="font-bold text-xl text-pink-500 mb-4">月別収入</h2>
+        <%= column_chart  @incomes_data_par_monthpar_month, height: "300px", colors: ["#ff69b4"] %>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+      <div class="p-5">
+        <h2 class="font-bold text-xl text-pink-500 mb-4">月別支出</h2>
+        <%= column_chart @expenses_par_month, height: "300px", colors: ["#ff69b4"] %>
+      </div>
+    </div>
+
+
+    <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+      <div class="p-5">
+        <h2 class="font-bold text-xl text-pink-500 mb-4">月別収入/月別支出</h2>
+        <%= column_chart [
+                           { name: 'Income', data: @data_par_month.transform_values { |v| v[:income] } },
+                           { name: 'Expense', data: @data_par_month.transform_values { |v| v[:expense] } }
+                         ], height: "500px", colors: ["#ff69b4", "#b469ff"] %>
+
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+      <div class="p-5">
+        <h2 class="font-bold text-xl text-pink-500 mb-4">月別収入/月別支出</h2>
+        <%= column_chart [
+                           { name: 'Income', data: @data_par_month.transform_values { |v| v[:income] } },
+                           { name: 'Expense', data: @data_par_month.transform_values { |v| v[:expense] } }
+                         ], height: "500px", colors: ["#ff69b4", "#b469ff"] %>
+
+      </div>
+    </div>
+  </div>
+</div>

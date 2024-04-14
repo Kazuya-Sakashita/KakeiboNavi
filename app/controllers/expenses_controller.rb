@@ -7,6 +7,10 @@ class ExpensesController < ApplicationController
 
   def index
     @expenses = current_user.expenses.order(:date)
+
+    @expenses_par_month = @expenses.group_by { |expense| expense.date.strftime('%Y-%m') }.transform_values do |expenses|
+      expenses.sum(&:amount)
+    end
   end
 
   def show; end

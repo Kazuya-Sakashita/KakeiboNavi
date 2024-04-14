@@ -10,32 +10,35 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-3.times do |i|
+
+5.times do |user_index|
   user = User.create!(
-    email: "user#{i + 1}@example.com",
+    email: "user#{user_index + 1}@example.com",
     password: 'password',
     password_confirmation: 'password'
   )
 
-  # 各ユーザーに対して12ヶ月分の収入データを生成
-  12.times do |j|
-    Income.create!(
-      user_id: user.id,
-      amount: rand(1000..5000),
-      source: "収入源#{j + 1}",
-      date: Date.new(2023, j + 1, 1)
-    )
-  end
+  4.times do |year| # 4年分のデータ、2020年から開始
+    12.times do |month|
+      # 月に3回の収入データを生成
+      3.times do |i|
+        Income.create!(
+          user_id: user.id,
+          amount: rand(20000..50000),  # 収入範囲を調整
+          source: "収入源#{user_index * 100 + year * 10 + i + 1}",
+          date: Date.new(2020 + year, month + 1, rand(1..28))
+        )
+      end
 
-  # 各ユーザーに対して12ヶ月分の支出データを生成（1ヶ月に20件）
-  12.times do |month|
-    20.times do |j|
-      Expense.create!(
-        user_id: user.id,
-        amount: rand(1000..10000),
-        description: "支出#{j + 1}",
-        date: Date.new(2023, month + 1, rand(1..28))
-      )
+      # 月に10回の支出データを生成
+      10.times do |j|
+        Expense.create!(
+          user_id: user.id,
+          amount: rand(500..10000),  # 支出範囲を調整
+          description: "支出#{user_index * 100 + year * 10 + j + 1}",
+          date: Date.new(2020 + year, month + 1, rand(1..28))
+        )
+      end
     end
   end
 end
